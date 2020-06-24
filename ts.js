@@ -9,28 +9,17 @@ app.get('/', (request, response) => {
 })
 
 app.get('/123', (request, response) => {
-    response.send( '<script> function clicked() {' +
+    response.send( '<script> function clicked() {' + 
+                  'var status = 0; ' + 
+                  'for(var ind = 0; ind < 5; ind++) {' +
+                  'setTimeout( function timer(){' +
+                  'status = 1 - status; ' +
+                  'alert(status); ' +
+                  '}, ind*2000 );' +
+                  '}' +
                   'document.getElementsByName("abc")[0].style.color="white";' +
-                  '}'+
-                 ' function img() {' +
-    'document.getElementsByName("img")[0].style.border = "100px solid white";' +
-'}' +
-                  
-                  'var status = 0' +            
-                  'if {' +
-                  'status = 0 (document.getElementsByName("abc")[0].style.color="purple";)' + 
                   '}' +
-                  'else {' +
-                  'status = 1 (document.getElementsByName("abc")[0].style.color="red";)' + 
-                  '}' +
-    
-                  'status = 1 - status'
-                  
-                  setTimeout(300);
-        
-'}' +          
-                  
-    '</script>' +              
+    '</script>' +            
     '<style type="text/css">' +
    'TABLE {' +
     'width: 300px;' +
